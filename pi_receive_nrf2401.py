@@ -7,9 +7,6 @@ GPIO.setmode(GPIO.BCM)
 
 pipes = [[0xe7, 0xe7, 0xe7, 0xe7, 0xe7],[0xc2, 0xc2, 0xc2, 0xc2, 0xc2]]
 
-
-
-
 radio = NRF24(GPIO,spidev.SpiDev())
 radio.begin(0,17)
 radio.setPayloadSize(32)
@@ -24,7 +21,10 @@ radio.enableAckPayload()
 radio.openReadingPipe(1,pipes[1])
 radio.printDetails()
 
+sleep(10)
+
 radio.startListening()
+
 
 while True:
     ackPL = [1]
