@@ -19,7 +19,7 @@ radio.setDataRate(NRF24.BR_2MBPS)
 radio.setPALevel(NRF24.PA_MIN)
 radio.setAutoAck(True)
 radio.enableDynamicPayloads()
-radio.enabledAckPayload()
+radio.enableAckPayload()
 
 radio.openWritingPipe(1,pipes[1])
 radio.printDetails()
